@@ -13,4 +13,8 @@ Lastly, we specify the volume of the application. We do this rather than binding
 ## How to run
 To run the Flask application, simply run the `docker compose up` command in the app directory. This will create the docker container and run it at the same time.
 
+If you wish to run it on your host machine redirectly, you will need to setup a virtual environment in the work directory `python3 -m venv venv`, and then activate it `source venv/bin/activate` on MacOS or `venv\Scripts\activate.ps1` for Windows.
+
+You'll then need to update pip and install requirements, `pip install --upgrade pip` followed with `pip install -r requirements.txt`. When your virtual environment is ready, set the FLASK_APP environment variable to 'main.py' with `export FLASK_APP=main.py` for MacOS. Then, to run the server, issue the `python3 -m flask run -p 8080` command, and the web application should be up.
+
 You will then be able to access the web application using your browser, going to `http://localhost:8080` or using the CLI with the command `curl http://localhost:8080`.
